@@ -69,33 +69,54 @@ const MealClient = () => {
                     <div className='grid grid-cols-1 gap-6'>
                         {
                             ["Small Meal", "Small Paleo Meal", "Medium Meal", "Medium Paleo Meal", "Large Meal", "Large Paleo Meal"]?.map((item, index)=>{
-                                return(
-                                    <div key={index} className='flex items-center justify-between'>
-                                        <p 
-                                            onClick={()=>handleTab(item, index)}
-                                            className={`
+                                return (
+                                  <div
+                                    key={index}
+                                    className="flex items-center justify-between"
+                                  >
+                                    <p
+                                      onClick={() => handleTab(item, index)}
+                                      className={`
                                                 w-[200px] flex items-center justify-center 
                                                 h-[40px] cursor-pointer 
-                                                ${tab === item ? "bg-[#FDB64E] text-[#F4F4F4]" : "bg-[#EEEEEE] text-[#656565] "}
+                                                ${
+                                                  tab === item
+                                                    ? "bg-[#FDB64E] text-[#F4F4F4]"
+                                                    : "bg-[#EEEEEE] text-[#656565] "
+                                                }
                                                 rounded-[24px] font-medium text-[16px] leading-5
                                             `}
-                                        >
-                                            {item}
-                                        </p>
-                                        <div 
-                                            className={`
-                                                bg-[#ECECEC] 
-                                                ${Number(tabItem) === index ? "flex": "none"}
+                                    >
+                                      {item}
+                                    </p>
+                                    <div
+                                      className={`
+                                                bg-[#ECECEC] flex
+                                                ${
+                                                  Number(tabItem) === index
+                                                    ? "bg-[#fdb74e3f]"
+                                                    : ""
+                                                }
                                                 items-center 
                                                 rounded-[24px] px-6 w-[150px] h-10 justify-between    
                                             `}
-                                        >
-                                            <button className='text-[#656565]' onClick={()=>setCount(count - 1)} >-</button>
-                                            <p className='text-[#656565]' >{count}</p>
-                                            <button className='text-[#656565]' onClick={()=>setCount(count + 1)} >+</button>
-                                        </div>
+                                    >
+                                      <button
+                                        className="text-[#656565]"
+                                        onClick={() => setCount(count - 1)}
+                                      >
+                                        -
+                                      </button>
+                                      <p className="text-[#656565]">{count}</p>
+                                      <button
+                                        className="text-[#656565]"
+                                        onClick={() => setCount(count + 1)}
+                                      >
+                                        +
+                                      </button>
                                     </div>
-                                )
+                                  </div>
+                                );
                             })
                         }
                     </div>
